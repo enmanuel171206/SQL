@@ -1,0 +1,35 @@
+CREATE TABLE furniture_store (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, location TEXT, color TEXT, price INTEGER);
+
+INSERT INTO furniture_store VALUES (1, "sofa", 5, "ny", "orange", 500);
+INSERT INTO furniture_store VALUES (2, "dining_table", 10, "nj","blue", 2500);
+INSERT INTO furniture_store VALUES (3, "mirror", 9, "fl", "purple", 1200);
+INSERT INTO furniture_store VALUES (4, "rocking chair", 5, "ny", "white", 130);
+INSERT INTO furniture_store VALUES (5, "tv stand", 10, "nj","brown", 3200);
+INSERT INTO furniture_store VALUES (6, "carpet", 4, "nj", "grey", 870);
+INSERT INTO furniture_store VALUES (7,"king bed", 3, "fl", "brown", 980);
+INSERT INTO furniture_store VALUES (8,"single bed", 2, "fl", "brown", 650);
+INSERT INTO furniture_store VALUES (9,"twin bed",3, "ny", "white", 130);
+INSERT INTO furniture_store VALUES (10,"dresser", 5, "ny", "brown", 650);
+INSERT INTO furniture_store VALUES (11, "lamp", 3, "nj", "grey", 45);
+INSERT INTO furniture_store VALUES (12,"night stand", 4, "fl", "brown", 700);
+INSERT INTO furniture_store VALUES (13, "crib", 2, "fl", "white", 570);
+INSERT INTO furniture_store VALUES (14, "desk", 5, "ny", "white", 780);
+INSERT INTO furniture_store VALUES (15, "dining chair", 5, "ny", "blue", 900);
+
+--Display the database ordered by price (low-high)
+SELECT * FROM furniture_store ORDER BY price asc;
+
+--How many states do we currently have inventory in?
+SELECT COUNT (DISTINCT location) FROM furniture_store;
+
+--Which states do we currently have inventory in?
+SELECT DISTINCT location FROM furniture_store;
+
+--Display the database for the ny location only
+SELECT * from furniture_store WHERE location='ny';
+
+--Display the database for the nj location only
+SELECT * from furniture_store WHERE location='nj';
+
+--Display the database for the fl location only
+SELECT * from furniture_store WHERE location='fl';
